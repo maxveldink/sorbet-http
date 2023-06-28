@@ -15,7 +15,7 @@ module Typed
         Processing = new("102 Processing")
         EarlyHints = new("103 Early Hints")
         # Successful
-        Ok = new("200 OK")
+        OK = new("200 OK")
         Created = new("201 Created")
         Accepted = new("202 Accepted")
         NonAuthoritativeInformation = new("203 Non-Authoritative Information")
@@ -89,7 +89,7 @@ module Typed
           when 103
             EarlyHints
           when 200
-            Ok
+            OK
           when 201
             Created
           when 202
@@ -215,7 +215,7 @@ module Typed
           102
         when EarlyHints
           103
-        when Ok
+        when OK
           200
         when Created
           201

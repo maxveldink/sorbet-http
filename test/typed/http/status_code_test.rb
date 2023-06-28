@@ -5,7 +5,7 @@ require "test_helper"
 
 class StatusCodeTest < Minitest::Test
   def test_from_i_returns_valid_status_code
-    assert_equal(Typed::HTTP::StatusCode::Ok, Typed::HTTP::StatusCode.from_i(200))
+    assert_equal(Typed::HTTP::StatusCode::OK, Typed::HTTP::StatusCode.from_i(200))
   end
 
   def test_from_i_raises_if_given_invalid_code
@@ -13,15 +13,15 @@ class StatusCodeTest < Minitest::Test
   end
 
   def test_from_code_is_alias_for_from_i
-    assert_equal(Typed::HTTP::StatusCode::Ok, Typed::HTTP::StatusCode.from_code(200))
+    assert_equal(Typed::HTTP::StatusCode::OK, Typed::HTTP::StatusCode.from_code(200))
   end
 
   def test_to_i_returns_valid_integer
-    assert_equal(200, Typed::HTTP::StatusCode::Ok.to_i)
+    assert_equal(200, Typed::HTTP::StatusCode::OK.to_i)
   end
 
   def test_to_code_aliases_to_i
-    assert_equal(200, Typed::HTTP::StatusCode::Ok.to_code)
+    assert_equal(200, Typed::HTTP::StatusCode::OK.to_code)
   end
 
   def test_informational_returns_true_if_100_class_code
@@ -35,7 +35,7 @@ class StatusCodeTest < Minitest::Test
   end
 
   def test_successful_returns_true_if_200_class_code
-    assert_predicate(Typed::HTTP::StatusCode::Ok, :successful?)
+    assert_predicate(Typed::HTTP::StatusCode::OK, :successful?)
     assert_predicate(Typed::HTTP::StatusCode::Created, :successful?)
   end
 
@@ -60,7 +60,7 @@ class StatusCodeTest < Minitest::Test
   end
 
   def test_client_error_returns_false_if_not_400_class_code
-    refute_predicate(Typed::HTTP::StatusCode::Ok, :client_error?)
+    refute_predicate(Typed::HTTP::StatusCode::OK, :client_error?)
     refute_predicate(Typed::HTTP::StatusCode::InternalServerError, :client_error?)
   end
 
@@ -71,6 +71,6 @@ class StatusCodeTest < Minitest::Test
 
   def test_server_error_returns_false_if_not_500_class_code
     refute_predicate(Typed::HTTP::StatusCode::BadRequest, :server_error?)
-    refute_predicate(Typed::HTTP::StatusCode::Ok, :server_error?)
+    refute_predicate(Typed::HTTP::StatusCode::OK, :server_error?)
   end
 end
