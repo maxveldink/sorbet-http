@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Common HTTP types for use with Sorbet-aware Ruby projects."
   spec.homepage = "https://github.com/maxveldink/sorbet-http"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 2.7"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["rubygems_mfa_required"] = "true"

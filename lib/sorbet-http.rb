@@ -11,4 +11,5 @@ module Typed; end
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/typed", namespace: Typed)
+loader.inflector.inflect("http" => "HTTP")
 loader.setup
