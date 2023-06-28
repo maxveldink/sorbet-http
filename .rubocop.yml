@@ -20,6 +20,10 @@ Metrics/AbcSize:
   Exclude:
     - lib/typed/http/status_code.rb
 
+Metrics/BlockLength:
+  Exclude:
+    - lib/typed/http/status_code.rb
+
 Metrics/ClassLength:
   Exclude:
     - lib/typed/http/status_code.rb
@@ -29,6 +33,10 @@ Metrics/CyclomaticComplexity:
     - lib/typed/http/status_code.rb
 
 Metrics/MethodLength:
+  Exclude:
+    - lib/typed/http/status_code.rb
+
+Metrics/PerceivedComplexity:
   Exclude:
     - lib/typed/http/status_code.rb
 
