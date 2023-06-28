@@ -331,8 +331,35 @@ module Typed
       alias to_code to_i
 
       sig { returns(T::Boolean) }
-      def success?
-        to_i.digits[-1] == 2
+      def informational?
+        first_digit == 1
+      end
+
+      sig { returns(T::Boolean) }
+      def successful?
+        first_digit == 2
+      end
+
+      sig { returns(T::Boolean) }
+      def redirection?
+        first_digit == 3
+      end
+
+      sig { returns(T::Boolean) }
+      def client_error?
+        first_digit == 4
+      end
+
+      sig { returns(T::Boolean) }
+      def server_error?
+        first_digit == 5
+      end
+
+      private
+
+      sig { returns(Integer) }
+      def first_digit
+        to_i.digits[-1]
       end
     end
   end
