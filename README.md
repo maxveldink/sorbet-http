@@ -14,7 +14,29 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
+The provided types are in the `Typed::HTTP` module. Here's some example usage:
 
+```ruby
+Typed::HTTP::Method::Get.serialize # => "GET"
+Typed::HTTP::Method.deserialize("POST") # => Typed::HTTP::Method::Post
+
+Typed::HTTP::StatusCode::Ok.serialize # => "200 OK"
+Typed::HTTP::StatusCode.deserialize("500 Internal Server Error") # => Typed::HTTP::StatusCode::InternalServerError
+
+Typed::HTTP::StatusCode::Ok.to_i # => 200
+Typed::HTTP::StatusCode::Ok.to_code # => 200
+
+Typed::HTTP::StatusCode.from_i(200) # => Typed::HTTP::StatusCode::Ok
+Typed::HTTP::StatusCode.from_code(200) # => Typed::HTTP::StatusCode::Ok
+
+Typed::HTTP::StatusCode::OK.successful? # => true
+Typed::HTTP::StatusCode::InternalServerError.successful? # => false
+
+Typed::HTTP::StatusCode::Continue.informational? # => true
+Typed::HTTP::StatusCode::Found.redirection? # => true
+Typed::HTTP::StatusCode::BadRequest.client_error? # => true
+Typed::HTTP::StatusCode::InternalServerError.server_error? # => true
+```
 
 ## Development
 
