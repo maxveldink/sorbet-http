@@ -12,7 +12,7 @@ group :development do
   gem "rubocop-rake"
   gem "rubocop-sorbet"
   gem "sorbet"
-  gem "spoom"
+  gem "spoom", "1.2.1" # Locked until we drop Ruby 2.7 support
   gem "tapioca", require: false
 end
 
