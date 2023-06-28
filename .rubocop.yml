@@ -9,9 +9,28 @@ require:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.1
   Exclude:
     - sorbet/**/*.rbi
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Exclude:
+    - lib/typed/http/status_code.rb
+
+Metrics/ClassLength:
+  Exclude:
+    - lib/typed/http/status_code.rb
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - lib/typed/http/status_code.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - lib/typed/http/status_code.rb
 
 Style/AccessorGrouping:
   Enabled: false
@@ -23,10 +42,3 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
-
-Layout/LineLength:
-  Max: 120
-
-Metrics/MethodLength:
-  Exclude:
-    - lib/typed/http/status_code.rb
